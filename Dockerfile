@@ -16,7 +16,7 @@ ENV MYSQL_HOST=galera-lb.galera \
 COPY ["superset-init", "/usr/local/bin/"]
 COPY ["superset_config.py", "/etc/superset/"]
 USER root
-RUN chmod +x /usr/local/bin/superset-init \
+RUN chmod +x /usr/local/bin/superset-init && \
     mkdir ~/downloads && \
     cd ~/downloads && \
     curl -O https://repo.mysql.com//mysql-apt-config_0.8.9-1_all.deb && \
